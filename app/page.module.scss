@@ -1,0 +1,17 @@
+@import './sass.scss';
+
+.main {
+  display: flex;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.signInMessage {
+  height: auto;
+  padding: var(--space-single);
+  text-transform: none;
+  line-height: 1;
+  color: var(--colour-mid);
+  background-color: var(--colour-fade);
+  border-radius: var(--space-single);
+}

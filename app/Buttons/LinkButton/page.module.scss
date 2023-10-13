@@ -1,0 +1,16 @@
+.penNew {
+	&:hover {
+		svg {
+			animation: shake 2s linear infinite both;
+		}
+	}
+}
+
+@keyframes shake {
+	0%		{ transform: translate(0);			}
+	3%	 	{ transform: translate(1px, -1px); 	}
+	6%	 	{ transform: translate(-1px, 1px); 	}
+	9%	 	{ transform: translate(1px, -1px); 	}
+	12% 	{ transform: translate(0);			}
+	100% 	{ transform: translate(0);			}
+}

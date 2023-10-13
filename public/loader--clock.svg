@@ -1,0 +1,44 @@
+
+<svg
+    version="1.1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 30 30"
+    enable-background="new 0 0 30 30"
+    xml:space="preserve"
+    width="30"
+    height="30"
+>
+  <circle
+      fill="none"
+      stroke="#ffffff"
+      stroke-width="2"
+      cx="15"
+      cy="15"
+      r="14"
+  />
+  <rect fill="#ffffff" x="14" y="14" width="2" height="15">
+    <animateTransform
+        attributeType="XML"
+        attributeName="transform"
+        type="rotate"
+        from="0 15 15"
+        to="360 15 15"
+        dur="3600ms"
+        repeatCount="indefinite"
+    />
+  </rect>
+  <rect fill="#ffffff" x="14" y="14" width="2" height="10">
+    <animateTransform
+        attributeType="XML"
+        attributeName="transform"
+        type="rotate"
+        from="0 15 15"
+        to="360 15 15"
+        dur="18000ms"
+        repeatCount="indefinite"
+    />
+  </rect>
+</svg>

@@ -1,0 +1,24 @@
+$tiny: 350px;
+$large-mobile: 600px;
+$tablet: 900px;
+$desktop: 1200px;
+$large-desktop: 1600px;
+$wide: 2000px;
+
+@mixin width {
+	width: 100%;
+	max-width: var(--main-width);
+
+	@media screen and (min-width: $tablet) {
+		max-width: none;
+		padding: 0 var(--space-double);
+	}
+}
+
+@mixin absolute {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+}
