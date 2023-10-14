@@ -23,6 +23,7 @@
 
 	.menuBtn {
 		position: absolute;
+		z-index: var(--index-high);
 		top: var(--space-single);
 		right: var(--space-single);
 		width: var(--space-double);

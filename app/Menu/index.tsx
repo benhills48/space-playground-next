@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from 'react';
+'use client';
+import React, { useEffect, useState } from 'react';
 import { PenTool, LogIn, LogOut } from 'react-feather';
 import Button from '../Buttons';
 import LinkButton from '../Buttons/LinkButton';
-import styles from './page.module.css';
+import styles from './page.module.scss';
 
 export default function Menu({
 	userName,
@@ -13,7 +14,6 @@ export default function Menu({
 	doSignOut,
 }) {
 	const [isOpen, setIsOpen] = useState(false);
-	const underlayRef = useRef(null);
 
 	useEffect(() => {
 		document.addEventListener('click', close);
@@ -33,11 +33,20 @@ export default function Menu({
 	}
 
 	return (
-		<nav className='menu' onKeyDown={checkKey}>
-			<div className={`modalUnderlay${isOpen ? ' show' : ''}`} onClick={() => setIsOpen(false)} />
+		<nav
+			className={`menu ${styles.menu}`}
+			onKeyDown={checkKey}
+		>
+			<div
+				className={`modalUnderlay ${styles.modalUnderlay}${isOpen ? ' show' : ''}`}
+				onClick={() => setIsOpen(false)}
+			/>
 
-			<Button className='menuBtn' onClick={() => setIsOpen(!isOpen)}>
-				<div className={`burger${isOpen ? ' isOpen' : ''}`}>
+			<Button
+				className={styles.menuBtn}
+				onClick={() => setIsOpen(!isOpen)}
+			>
+				<div className={`${styles.burger} ${isOpen ? styles.isOpen : ''}`}>
 					<svg width='100%' height='100%' viewBox='0 0 26 24'>
 						<rect y='0' />
 						<rect y='10' />
@@ -45,23 +54,23 @@ export default function Menu({
 					</svg>
 				</div>
 			</Button>
-			<div className={`menuDropdown${isOpen ? ' isOpen' : ''} imageAndText`}>
+			<div className={`${styles.menuDropdown} ${isOpen ? styles.isOpen : ''} imageAndText`}>
 				{isAdmin &&
-					<div className='menuBlock'>
+					<div className={styles.menuBlock}>
 						<LinkButton
 							url='/pen'
-							className='button penNew menuOpt imageAndText'
+							className={`button penNew ${styles.menuOpt} imageAndText`}
 						>
 							<PenTool size={16} strokeWidth={1.4} />
 							<span>new pen</span>
 						</LinkButton>
 					</div>
 				}
-				<div className='menuBlock'>
+				<div className={styles.menuBlock}>
 					{isSignedIn ?
 						<>
 							<Button
-								wrapperCn='menuOpt'
+								wrapperCn={styles.menuOpt}
 								className='button'
 								onClick={doSignOut}
 							>
@@ -69,7 +78,7 @@ export default function Menu({
 								<span>sign out</span>
 							</Button>
 							{userName && userEmail &&
-								<span className='menuOpt userInfo'>
+								<span className={`${styles.menuOpt} ${styles.userInfo}`}>
 									<p>signed in as {userName}</p>
 									<p>{userEmail}</p>
 								</span>
@@ -77,7 +86,7 @@ export default function Menu({
 						</>
 					:
 						<Button
-							wrapperCn='menuOpt'
+							wrapperCn={styles.menuOpt}
 							className='button'
 							onClick={doSignIn}
 						>

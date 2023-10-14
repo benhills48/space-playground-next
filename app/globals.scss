@@ -188,3 +188,20 @@ iframe {
     margin-right: var(--space-half);
   }
 }
+
+.modalUnderlay {
+  z-index: calc(var(--index-high) - 1);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s;
+
+  &.show {
+    position: fixed;
+    opacity: 1;
+  }
+}

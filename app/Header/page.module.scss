@@ -1,0 +1,40 @@
+@import '../sass.scss';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: var(--space-single) var(--space-single) 0 var(--space-single);
+
+  @media screen and (min-width: $tablet) {
+    margin: var(--space-single) var(--space-double) 0 var(--space-double);
+  }
+
+  .signIn {
+
+  }
+
+  .logo-svg {
+    fill: var(--colour-fade);
+    transition: fill 0.6s ease;
+
+    path {
+      transition: stroke 0.2s ease;
+    }
+
+    &:hover {
+      fill: var(--colour-low);
+
+      path {
+        stroke: #1414ff;
+      }
+    }
+
+    &:active {
+      path {
+        stroke: #5b5bff;
+      }
+    }
+  }
+}
